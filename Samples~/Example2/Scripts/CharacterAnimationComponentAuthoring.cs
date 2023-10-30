@@ -23,7 +23,7 @@ public class CharacterAnimationComponentAuthoring : UnityEngine.MonoBehaviour, I
 
 public struct CharacterAnimationComponent : IComponentData
 {
-	public FixedString64 curAnimation;
-	public FixedString64 idle;
-	public FixedString64 run;
+	public FixedString64Bytes curAnimation;
+	public FixedString64Bytes idle;
+	public FixedString64Bytes run;
 }

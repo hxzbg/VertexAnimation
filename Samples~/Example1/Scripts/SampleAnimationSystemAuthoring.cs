@@ -42,7 +42,7 @@ public class SampleAnimationSystemAuthoring : UnityEngine.MonoBehaviour
 
 // Example system to update animation parameters.
 [UpdateBefore(typeof(VA_AnimatorSystem))]
-public class PlayRandomAnimationSystem : SystemBase
+public partial class PlayRandomAnimationSystem : SystemBase
 {
 	protected override void OnCreate()
 	{
@@ -78,9 +78,9 @@ public class PlayRandomAnimationSystem : SystemBase
 
 // Example system to set the animation by name.
 [UpdateBefore(typeof(VA_AnimatorSystem))]
-public class PlayAnimationByNameSystem : SystemBase
+public partial class PlayAnimationByNameSystem : SystemBase
 {
-	public FixedString64 animationName;
+	public FixedString64Bytes animationName;
 
 	protected override void OnCreate()
 	{
@@ -92,7 +92,7 @@ public class PlayAnimationByNameSystem : SystemBase
 	protected override void OnUpdate()
 	{
 		float deltaTime = UnityEngine.Time.deltaTime;
-		FixedString64 an = animationName;
+		FixedString64Bytes an = animationName;
 
 		Entities.ForEach((Entity entity, ref VA_AnimatorComponent ac) =>
 		{
